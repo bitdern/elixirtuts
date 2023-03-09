@@ -15,8 +15,4 @@ defmodule FirstElixirApp do
   def hello do
     :world
   end
-
-  defp private_hello do
-    :private_work
-  end
 end
