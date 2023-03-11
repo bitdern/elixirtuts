@@ -19,6 +19,19 @@ defmodule LinkedLists do
 
   def add_fast(list, value) do
     list_reversed = Enum.reverse(list)
-    list_reversed
+    new_list = [value | list_reversed]
+    Enum.reverse(new_list)
+  end
+
+  def remove_item(list, index) do
+    List.delete_at(list, index)
+  end
+
+  def equipment_count(list) do
+    length(list)
+  end
+
+  def check_for_item(list, item) do
+    item in list
   end
 end
