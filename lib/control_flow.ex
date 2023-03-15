@@ -14,4 +14,25 @@ defmodule ControlFlow do
       true -> "empty tank"
     end
   end
+
+  def  error_code_check(value) do
+    case value do
+      200 -> :ok
+      201 -> :created
+      204 -> :no_content
+      n when is_integer(n) and n > 299 -> :error
+      _ -> :unknown
+    end
+  end
+
+  defp convert_kg_to_lb(kg_value), do: kg_value * 2.2
+
+  def equipment_check(equipment_tuple) do
+    case equipment_tuple do
+      {weight, unit_type, quantity} when weight / quantity < 16 and unit_type == :kg -> :equipment_clear
+      {weight, unit_type, quantity} when unit_type == :lb ->
+        if convert_kg_to_lb(weight) / quantity < 16, do: :equipment_cleared, else: :fail
+      _ -> :unknown
+    end
+  end
 end
