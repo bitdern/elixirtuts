@@ -18,7 +18,7 @@ defmodule Anonymous do
   - list: list
   ## Examples
       iex> EquipmentDetails.item_detail(:snacks)
-    {1, :kg, 16}
+      {1, :kg, 16}
   """
   def item_details(:space_helmet) do
     {3, :kg, 1}
