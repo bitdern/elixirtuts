@@ -17,7 +17,7 @@ defmodule EquipmentDetails do
   ## Parameters
   - list: list
   ## Examples
-      iex> EquipmentDetails.item_detail(:snacks)
+      iex> EquipmentDetails.item_details(:snacks)
     {1, :kg, 16}
   """
   def item_details(:space_helmet) do

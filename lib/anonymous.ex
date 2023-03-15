@@ -1,5 +1,8 @@
 defmodule Anonymous do
 
+  def list do
+    [:space_helmet, :space_suit, :snacks, :grappling_hook, :probe]
+  end
   @doc """
   Returns list of Blork's equipment
   Returns list of `atoms`
@@ -17,7 +20,7 @@ defmodule Anonymous do
   ## Parameters
   - list: list
   ## Examples
-      iex> EquipmentDetails.item_detail(:snacks)
+      iex> EquipmentDetails.item_details(:snacks)
       {1, :kg, 16}
   """
   def item_details(:space_helmet) do
@@ -45,9 +48,9 @@ defmodule Anonymous do
   ## Parameters
   - weight: integer or float
   - item: atom
-  - list: blork's equipment list e.g. `get_equipment_list()`
+  - list: blork's equipment list
   ## Examples
-      iex> Anonymous.get_weight_in_lbs(list)
+      iex> Anonymous.get_weight_in_lbs([:space_helmet, :space_suit, :snacks, :grappling_hook, :probe])
       [6.6000000000000005, 35.2, 2.2, 8.8, 2]
   """
   def get_weight_in_lbs(list) do
@@ -68,7 +71,7 @@ defmodule Anonymous do
   ## Parameters
   - list: list
   ## Examples
-      iex> Anonymous.get_first_item(list)
+      iex> Anonymous.get_first_item([:space_helmet, :space_suit, :snacks, :grappling_hook, :probe])
       :space_helmet
   """
   def get_first_item(list) do
@@ -81,7 +84,7 @@ defmodule Anonymous do
   ## Parameters
   - list: list
   ## Examples
-    iex> Anonymous.atom_to_string(list)
+    iex> Anonymous.atom_to_string([:space_helmet, :space_suit, :snacks, :grappling_hook, :probe])
     ["SPACE HELMET", "SPACE SUIT", "SNACKS", "GRAPPLING HOOK", "PROBE"]
   """
   def atom_to_string(list) do
