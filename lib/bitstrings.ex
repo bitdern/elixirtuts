@@ -12,6 +12,11 @@ defmodule Bitstrings do
   ## Parameters
   - binary: binary value
   - charset: list of characters available for scripting
+  ## Examples
+    iex> Bitstrings.encode_instruction(?H)
+    0
+    iex> Bitstrings.encode_instruction(?T)
+    8
   """
   def encode_instruction(code_point) do
     case code_point do
@@ -30,6 +35,11 @@ defmodule Bitstrings do
   ## Parameters
   - binary: binary value
   - charset: list of characters available for scripting
+  ## Examples
+    iex> Bitstrings.decode_instruction(8)
+    84
+    iex> Bitstrings.decode_instruction(2)
+    66
   """
   def decode_instruction(encoded_code) do
     case encoded_code do
